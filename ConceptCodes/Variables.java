@@ -14,11 +14,11 @@ public class Variables {
         // Constants
         final float PI = 3.14F;
 
-        // System.out.println(a);
-        // System.out.println(b);
-        // System.out.println(name);
-        // System.out.println(pencil_price);
-        // System.out.println(PI);
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(name);
+        System.out.println(pencil_price);
+        System.out.println(PI);
 
         name = "Parul";
         a = 20;
@@ -38,14 +38,15 @@ public class Variables {
         // Get input from the User using Scanner function of Java
 
         // This will only pring first tocken of the Input
-        Scanner sc = new Scanner(System.in);
-        String Name = sc.next();
-        System.out.println(Name);
-
+        try (Scanner sc = new Scanner(System.in)) {
+            String Name = sc.next();
+            System.out.println(Name);
+        }
         // This will print whole Input
-        Scanner fullname_sc = new Scanner(System.in);
-        String Fullname = fullname_sc.nextLine();
-        System.out.println(Fullname);
+        try (Scanner fullname_sc = new Scanner(System.in)) {
+            String Fullname = fullname_sc.nextLine();
+            System.out.println(Fullname);
+        }
 
         // Note: Other next utilities are nextInt(), nextFloat(), etc.
 
@@ -59,13 +60,13 @@ public class Variables {
 
         // Q2. Take 2 variables 'c' & 'd' and print their sum.
 
-        Scanner int_sc = new Scanner(System.in);
-        int c = int_sc.nextInt();
-        int d = int_sc.nextInt();
-        int int_sum = c + d;
+        try (Scanner int_sc = new Scanner(System.in)) {
+            int c = int_sc.nextInt();
+            int d = int_sc.nextInt();
+            int int_sum = c + d;
 
-        System.out.println(int_sum);
-
+            System.out.println(int_sum);
+        }
     }
 
 }
